@@ -1,29 +1,14 @@
 """
-Office Optimizer Pro v5.2
-Professional tool to compress PowerPoint, Word, and Excel files
-
 ============================================
-PROPRIETARY SOFTWARE - SHILEZI
+SHILEZI FFMPEG SETUP TOOL - PROPRIETARY
 ============================================
-Copyright (c) 2025 Shilezi (https://github.com/shilezi)
+Setup FFmpeg for Shilezi Office Optimizer Pro
+Created by: Shilezi (https://github.com/shilezi)
 
-This software is protected by copyright law and international treaties.
-Unauthorized reproduction or distribution may result in severe civil and
-criminal penalties.
-
-Use of this software is subject to the following restrictions:
-1. Personal use only
-2. No redistribution without explicit permission
-3. No reverse engineering or modification
-4. No commercial use without licensing
+This tool is part of Office Optimizer Pro.
+Unauthorized use or distribution is prohibited.
 ============================================
-
-Version: 5.2.0
-Build Date: 2025-12-11
-Author: Shilezi
-Repository: https://github.com/shilezi/office-optimizer-pro
 """
-
 
 
 # download_minimal_ffmpeg.py
