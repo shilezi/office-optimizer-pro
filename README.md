@@ -71,3 +71,118 @@ pip install -r requirements.txt
 
 # Run the application
 python office_optimizer_pro.py
+```
+
+FFmpeg Setup (Optional for Video Compression)
+```bash
+# Download FFmpeg automatically
+python download_minimal_ffmpeg.py
+
+# Or manually download from:
+# https://github.com/BtbN/FFmpeg-Builds/releases
+# Place ffmpeg.exe in the same folder as the script
+```
+🚀 Usage
+Launch Application: Run python office_optimizer_pro.py
+
+Add Files: Click "Add Files" or "Add Folder" to select Office files
+
+Select Profile: Choose compression profile based on your needs
+
+Configure Options: Enable/disable video compression, PNG conversion, backups
+
+Start Optimization: Click "START OPTIMIZATION"
+
+Review Results: Check statistics and savings
+
+📁 Supported File Types
+PowerPoint: .pptx files (with PowerPoint structure optimization)
+
+Word: .docx files
+
+Excel: .xlsx files
+
+🎯 Technical Specifications
+```bash
+
+Specification	Details
+Max File Size	2GB per file
+Image Formats	PNG, JPEG, TIFF, BMP
+Video Formats	MP4, MOV, AVI, WMV, MKV, FLV, WebM
+Audio Formats	WAV, MP3, M4A, WMA, OGG, FLAC
+Compression	ZIP DEFLATE + media optimization
+GUI Framework	CustomTkinter (modern dark theme)
+```
+
+🏆 Performance Benchmarks
+
+```bash
+
+Scenario	Original Size	Compressed Size	Savings
+Presentation (50 slides)	85 MB	24 MB	72%
+Report with images	120 MB	45 MB	63%
+Spreadsheet with charts	65 MB	28 MB	57%
+Average Compression	-	-	64%
+```
+
+🔒 Protection & Licensing
+This software includes:
+
+Digital watermarking to verify authenticity
+
+Integrity checks to prevent tampering
+
+Branding protection - Shilezi name embedded throughout
+
+Usage tracking (anonymous) for version validation
+
+For Commercial Licensing:
+Contact: shilezi@hotmail.com
+
+Business/Enterprise licenses available
+
+Custom feature development
+
+White-label solutions
+
+Integration services
+
+🐛 Known Issues & Limitations
+PowerPoint COM: Requires PowerPoint installed for structure optimization
+
+FFmpeg: Optional but recommended for video compression
+
+Large Files: Processing time increases with file size (>500MB)
+
+Transparency: PNG files with transparency are preserved (not converted to JPEG)
+
+
+🔄 Version History
+```bash
+
+Version	Release Date	Key Features
+v5.4	January 2025	Enhanced GUI, video compression, smart PNG detection
+v5.2	December 2025	Initial release, basic compression, file validation
+v5.0	November 2024	Core engine development
+```
+🤝 Support & Community
+GitHub Issues: Report bugs or feature requests
+
+Documentation: See docs/ folder for detailed guides
+
+Updates: Check repository for latest releases
+
+📄 License
+PROPRIETARY SOFTWARE LICENSE
+
+Copyright © 2025 Shilezi. All Rights Reserved.
+
+Made with ❤️ by Shilezi
+Optimizing Office files since 2024
+This software and associated documentation files are the proprietary property of Shilezi.
+No part of this software may be reproduced, distributed, or transmitted in any form or
+by any means without the prior written permission of the author.
+
+For licensing inquiries: shilezi@hotmaii.com
+
+
