@@ -23,9 +23,9 @@ def verify_integrity():
 def display_branding():
     """Display branding information"""
     print("\n" + "="*60)
-    print("Office Optimizer Pro v5.4")
+    print("Office Optimizer Pro v5.2")
     print("SHILEZI PROPRIETARY SOFTWARE")
-    print("Copyright © 2024 Shilezi. All Rights Reserved.")
+    print("Copyright © 2025 Shilezi. All Rights Reserved.")
     print("Unauthorized use or distribution is prohibited.")
     print("="*60 + "\n")
 
