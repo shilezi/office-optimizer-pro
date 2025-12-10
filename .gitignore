@@ -1,4 +1,5 @@
 
+```gitignore
 # Python
 __pycache__/
 *.py[cod]
@@ -20,6 +21,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # IDE
 .vscode/
@@ -27,20 +29,53 @@ wheels/
 *.swp
 *.swo
 *~
+*.code-workspace
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
 # Application specific
 ffmpeg/
 ffmpeg_simple/
+ffmpeg_temp*/
 *.backup_*
 office_optimizer_backups/
 icon.ico
 
 # Temp files
 *.tmp
+*.temp
 temp/
 tmp/
-EOF
+*.log
+*.bak
+*.cache
+
+# Output files
+*_Optimized.*
+*.optimized
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# PyInstaller
+*.spec
+
+# Project files
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+.mypy_cache/
+
+# Documentation
+docs/_build/
