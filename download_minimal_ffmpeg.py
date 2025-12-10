@@ -1,17 +1,15 @@
 """
-============================================
-SHILEZI FFMPEG SETUP TOOL - PROPRIETARY
-============================================
+================================================================================
+SHILEZI FFMPEG SETUP TOOL v5.4 (2025)
+================================================================================
 Setup FFmpeg for Shilezi Office Optimizer Pro
 Created by: Shilezi (https://github.com/shilezi)
-
-This tool is part of Office Optimizer Pro.
-Unauthorized use or distribution is prohibited.
-============================================
+================================================================================
+PROPRIETARY SOFTWARE - UNAUTHORIZED DISTRIBUTION PROHIBITED
+Copyright © 2025 Shilezi. All Rights Reserved.
+================================================================================
 """
 
-
-# download_minimal_ffmpeg.py
 import requests
 import zipfile
 import os
@@ -19,15 +17,25 @@ import sys
 import platform
 import shutil
 from pathlib import Path
+import subprocess
+
+def display_branding():
+    """Display Shilezi branding"""
+    print("\n" + "="*60)
+    print("⚡ SHILEZI FFMPEG SETUP TOOL v5.4")
+    print("   For Office Optimizer Pro (2025 Release)")
+    print("   Created by: Shilezi (https://github.com/shilezi)")
+    print("="*60 + "\n")
 
 def download_minimal_ffmpeg():
     """Download minimal FFmpeg for Windows"""
     
-    print("Downloading minimal FFmpeg...")
-    print("This will reduce the size from 209MB to ~20MB\n")
+    display_branding()
+    
+    print("🔧 Setting up FFmpeg for Office Optimizer Pro v5.4")
+    print("   This will download and configure FFmpeg (~20MB)\n")
     
     # URL for minimal FFmpeg build from BtbN
-    # Updated to use the correct URL structure
     url = "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip"
     
     # Alternative URLs if the above doesn't work
@@ -35,12 +43,12 @@ def download_minimal_ffmpeg():
     
     try:
         # Create temp directory
-        temp_dir = "ffmpeg_temp"
+        temp_dir = "ffmpeg_temp_shilezi"
         os.makedirs(temp_dir, exist_ok=True)
         zip_path = os.path.join(temp_dir, "ffmpeg.zip")
         
         # Download the zip
-        print(f"Downloading from: {url}")
+        print(f"📥 Downloading FFmpeg from: {url}")
         response = requests.get(url, stream=True)
         response.raise_for_status()
         
@@ -57,7 +65,7 @@ def download_minimal_ffmpeg():
                         percent = (downloaded / total_size) * 100
                         print(f"\r  Progress: {percent:.1f}%", end='')
         
-        print("\n\nExtracting files...")
+        print("\n\n📂 Extracting files...")
         
         # Extract the zip
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
@@ -137,20 +145,21 @@ def download_minimal_ffmpeg():
             size_mb = os.path.getsize(ffmpeg_exe) / (1024 * 1024)
             dll_count = len([f for f in os.listdir("ffmpeg") if f.endswith('.dll')])
             
-            print(f"\n✅ Minimal FFmpeg downloaded successfully!")
-            print(f"Location: {ffmpeg_exe}")
-            print(f"Size: {size_mb:.1f}MB")
-            print(f"DLLs: {dll_count} files")
-            print(f"Total folder size: {get_folder_size('ffmpeg'):.1f}MB")
+            print(f"\n✅ FFmpeg setup completed successfully!")
+            print(f"   Location: {ffmpeg_exe}")
+            print(f"   Size: {size_mb:.1f}MB")
+            print(f"   DLLs: {dll_count} files")
+            print(f"   Total folder size: {get_folder_size('ffmpeg'):.1f}MB")
             
             # Test if it works
-            print("\nTesting FFmpeg...")
+            print("\n🔍 Testing FFmpeg...")
             try:
                 result = subprocess.run([ffmpeg_exe, "-version"], 
                                       capture_output=True, text=True, timeout=5)
                 if result.returncode == 0:
                     version_line = result.stdout.split('\n')[0]
                     print(f"  ✓ Working: {version_line}")
+                    print(f"\n🎉 Ready for Office Optimizer Pro v5.4!")
                 else:
                     print("  ⚠️ FFmpeg returned error")
             except:
