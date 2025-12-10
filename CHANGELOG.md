@@ -52,3 +52,54 @@ All notable changes to Office Optimizer Pro will be documented in this file.
 - Limited error recovery
 - Basic UI with limited features
 - No batch processing
+
+FFmpeg Setup (Optional)
+For video/audio compression:
+
+bash
+python download_minimal_ffmpeg.py
+🐛 Known Issues
+PowerPoint COM: Requires PowerPoint installed for full optimization
+
+Large Files: Files >1GB may take longer to process
+
+Transparency: Complex PNG transparency may not be detected perfectly
+
+🔄 Upgrade from v5.2
+Breaking Changes
+New GUI interface (customtkinter instead of tkinter)
+
+Different command-line arguments
+
+Changed configuration format
+
+Migration Path
+Backup your old configuration files
+
+Install new requirements
+
+Copy your file paths to the new interface
+
+Test with sample files first
+
+📞 Support
+GitHub Issues: Report Bugs
+
+Documentation: See README.md and docs/ folder
+
+Contact: [Your contact information]
+
+🙏 Acknowledgments
+Thanks to all beta testers and contributors who helped make v5.4 possible!
+
+📄 License
+PROPRIETARY SOFTWARE
+Copyright © 2025 Shilezi. All Rights Reserved.
+
+Unauthorized distribution, modification, or commercial use is prohibited.
+
+Made with ❤️ by Shilezi
+Optimizing Office files since 2024
+
+
+
