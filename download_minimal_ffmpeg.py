@@ -1,5 +1,5 @@
 """
-Office Optimizer Pro v5.4
+Office Optimizer Pro v5.2
 Professional tool to compress PowerPoint, Word, and Excel files
 
 ============================================
