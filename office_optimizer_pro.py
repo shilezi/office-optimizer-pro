@@ -1,40 +1,15 @@
 """
-Office Optimizer Pro v5.2
+================================================================================
+Office Optimizer Pro v5.4
 Professional tool to compress PowerPoint, Word, and Excel files
-
-============================================
-PROPRIETARY SOFTWARE - SHILEZI
-============================================
-Copyright (c) 2025 Shilezi (https://github.com/shilezi)
-
-This software is protected by copyright law and international treaties.
-Unauthorized reproduction or distribution may result in severe civil and
-criminal penalties.
-
-Use of this software is subject to the following restrictions:
-1. Personal use only
-2. No redistribution without explicit permission
-3. No reverse engineering or modification
-4. No commercial use without licensing
-============================================
-
-Version: 5.2.0
-Build Date: 2025-12-11
-Author: Shilezi
-Repository: https://github.com/shilezi/office-optimizer-pro
+================================================================================
+CREATED BY: SHILEZI (https://github.com/shilezi)
+VERSION: 5.4.0 | RELEASE: 2025
+================================================================================
+PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED
+Copyright © 2025 Shilezi. Unauthorized distribution is prohibited.
+================================================================================
 """
-
-# Import protection
-try:
-    from protection import verify_integrity, display_branding
-    if not verify_integrity():
-        print("⚠️ Integrity check failed. Please download the official version.")
-        sys.exit(1)
-    display_branding()
-except ImportError:
-    print("⚠️ Protection module missing. This may not be an official version.")
-    print("Download from: https://github.com/shilezi/office-optimizer-pro")
-    sys.exit(1)
 
 import zipfile
 import os
@@ -64,11 +39,36 @@ except ImportError:
     HAS_COM = False
 
 # ============================================================================
+# BRANDING PROTECTION
+# ============================================================================
+
+def verify_authenticity():
+    """Verify this is an authentic Shilezi build"""
+    try:
+        # Check for Shilezi watermark in code
+        watermark = "SHILEZI (https://github.com/shilezi)"
+        with open(__file__, 'r', encoding='utf-8') as f:
+            content = f.read(2000)  # Read first 2000 chars
+            if watermark not in content:
+                return False, "Unauthorized modification detected"
+        
+        # Check year
+        if "2025" not in content:
+            return False, "Invalid build year"
+            
+        return True, "Authentic Shilezi v5.4 Build (2025)"
+    except:
+        return False, "Integrity check failed"
+
+# ============================================================================
 # CONFIGURATION CONSTANTS
 # ============================================================================
 
 CONFIG = {
     "version": "5.4.0",
+    "year": "2025",
+    "author": "Shilezi",
+    "repository": "https://github.com/shilezi/office-optimizer-pro",
     "max_file_size": 2 * 1024 * 1024 * 1024,  # 2GB
     "chunk_size": 10 * 1024 * 1024,
     "temp_backup_dir": os.path.join(tempfile.gettempdir(), "office_optimizer_backups"),
@@ -81,12 +81,18 @@ CONFIG = {
     }
 }
 
+# Display authenticity check on import
+is_authentic, auth_message = verify_authenticity()
+if not is_authentic:
+    print(f"⚠️ WARNING: {auth_message}")
+    print("Download the official version from: https://github.com/shilezi/office-optimizer-pro")
+
 # ============================================================================
 # CORE COMPRESSION ENGINE
 # ============================================================================
 
 class OfficeCompressor:
-    """Main compression engine with enhanced features"""
+    """Main compression engine with enhanced features - Shilezi v5.4 (2025)"""
     
     def __init__(self, quality=70, max_width=1920, compress_video=False, 
                  png_smart_convert=False, enable_backup=True):
@@ -634,13 +640,22 @@ class OfficeCompressor:
 # ============================================================================
 
 class OfficeOptimizerApp(ctk.CTk):
-    """Modern GUI application for Office file optimization"""
+    """Modern GUI application for Office file optimization - Shilezi v5.4 (2025)"""
     
     def __init__(self):
         super().__init__()
         
+        # Verify authenticity
+        is_authentic, auth_message = verify_authenticity()
+        if not is_authentic:
+            messagebox.showerror("Unauthorized Build", 
+                                f"⚠️ WARNING: {auth_message}\n\n"
+                                f"Please download the official version from:\n"
+                                f"{CONFIG['repository']}")
+            sys.exit(1)
+        
         # Configure window
-        self.title(f"Office Optimizer Pro v{CONFIG['version']}")
+        self.title(f"Office Optimizer Pro v{CONFIG['version']} (Shilezi © {CONFIG['year']})")
         self.geometry("1000x800")
         self.minsize(900, 700)
         
@@ -669,28 +684,48 @@ class OfficeOptimizerApp(ctk.CTk):
         self.after(500, self._check_system)
     
     def _create_header(self):
-        """Create application header"""
-        self.header = ctk.CTkFrame(self, height=90, corner_radius=0, fg_color="#2563eb")
+        """Create application header with Shilezi branding"""
+        self.header = ctk.CTkFrame(self, height=100, corner_radius=0, fg_color="#1a365d")
         self.header.grid(row=0, column=0, sticky="ew", padx=0, pady=0)
         self.header.grid_columnconfigure(0, weight=1)
         
-        # Title
+        # Main title with Shilezi branding
         title_frame = ctk.CTkFrame(self.header, fg_color="transparent")
-        title_frame.pack(expand=True, fill="both", padx=30)
+        title_frame.pack(expand=True, fill="both", padx=30, pady=10)
         
+        # Shilezi logo/text
+        ctk.CTkLabel(
+            title_frame,
+            text="⚡ SHILEZI",
+            font=("Segoe UI", 16, "bold"),
+            text_color="#60a5fa"
+        ).pack(side="left", pady=5)
+        
+        # Main title
         ctk.CTkLabel(
             title_frame,
             text="Office Optimizer Pro",
             font=("Segoe UI", 28, "bold"),
             text_color="white"
-        ).pack(side="left", pady=20)
+        ).pack(side="left", padx=(20, 0), pady=5)
+        
+        # Version and year
+        version_frame = ctk.CTkFrame(title_frame, fg_color="transparent")
+        version_frame.pack(side="left", padx=(15, 0), pady=5)
         
         ctk.CTkLabel(
-            title_frame,
+            version_frame,
             text=f"v{CONFIG['version']}",
-            font=("Segoe UI", 12),
+            font=("Segoe UI", 12, "bold"),
+            text_color="#93c5fd"
+        ).pack(side="top")
+        
+        ctk.CTkLabel(
+            version_frame,
+            text=f"© {CONFIG['year']}",
+            font=("Segoe UI", 10),
             text_color="#bfdbfe"
-        ).pack(side="left", padx=(10, 0), pady=20)
+        ).pack(side="top")
         
         # Quick actions
         action_frame = ctk.CTkFrame(self.header, fg_color="transparent")
@@ -711,6 +746,14 @@ class OfficeOptimizerApp(ctk.CTk):
             height=30,
             command=self._open_settings
         ).pack(side="right")
+        
+        # Demo watermark (non-removable)
+        ctk.CTkLabel(
+            action_frame,
+            text="🚀 Shilezi Official Build",
+            font=("Consolas", 9, "bold"),
+            text_color="#fbbf24"
+        ).pack(side="left")
     
     def _create_file_area(self):
         """Create file selection and queue area"""
@@ -907,7 +950,7 @@ class OfficeOptimizerApp(ctk.CTk):
         # Status label
         self.lbl_status = ctk.CTkLabel(
             self.status_frame,
-            text="Ready",
+            text="Ready - Shilezi v5.4 (2025)",
             text_color="#94a3b8",
             font=("Consolas", 10)
         )
@@ -1322,12 +1365,14 @@ class OfficeOptimizerApp(ctk.CTk):
 # ============================================================================
 
 def main():
-        """Main entry point"""
-    # Protection check
-    print("\n" + "="*60)
-    print("Office Optimizer Pro v5.2 - SHILEZI EDITION")
-    print("Copyright © 2025 Shilezi. All Rights Reserved.")
-    print("="*60 + "\n")
+    """Main entry point"""
+    # Display Shilezi branding
+    print("\n" + "="*70)
+    print("⚡ OFFICE OPTIMIZER PRO v5.4")
+    print("   Created by: SHILEZI (https://github.com/shilezi)")
+    print(f"   Version: 5.4.0 | Year: 2025 | Build: Official")
+    print("="*70)
+    
     # Check for required modules
     try:
         import customtkinter
@@ -1343,6 +1388,15 @@ def main():
         print("Error: Pillow is not installed.")
         print("Please install it using: pip install pillow")
         input("Press Enter to exit...")
+        return
+    
+    # Verify authenticity
+    is_authentic, auth_message = verify_authenticity()
+    if not is_authentic:
+        print(f"\n⚠️  WARNING: {auth_message}")
+        print(f"   Please download the official version from:")
+        print(f"   https://github.com/shilezi/office-optimizer-pro")
+        input("\nPress Enter to exit...")
         return
     
     # Create and run application
