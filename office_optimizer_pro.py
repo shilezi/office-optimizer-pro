@@ -1310,7 +1310,12 @@ class OfficeOptimizerApp(ctk.CTk):
 # ============================================================================
 
 def main():
-    """Main entry point"""
+        """Main entry point"""
+    # Protection check
+    print("\n" + "="*60)
+    print("Office Optimizer Pro v5.2 - SHILEZI EDITION")
+    print("Copyright © 2025 Shilezi. All Rights Reserved.")
+    print("="*60 + "\n")
     # Check for required modules
     try:
         import customtkinter
