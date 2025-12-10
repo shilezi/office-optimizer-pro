@@ -1,5 +1,5 @@
 
-# 🚀 Office Optimizer Pro v5.4
+# 🚀 Office Optimizer Pro v5.2
 
 **Created by Shilezi (https://github.com/shilezi)**
 
@@ -18,4 +18,5 @@ This software is the intellectual property of Shilezi. Unauthorized distribution
 ## Installation
 ```bash
 pip install -r requirements.txt
+
 
