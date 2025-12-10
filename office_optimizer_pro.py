@@ -24,6 +24,18 @@ Author: Shilezi
 Repository: https://github.com/shilezi/office-optimizer-pro
 """
 
+# Import protection
+try:
+    from protection import verify_integrity, display_branding
+    if not verify_integrity():
+        print("⚠️ Integrity check failed. Please download the official version.")
+        sys.exit(1)
+    display_branding()
+except ImportError:
+    print("⚠️ Protection module missing. This may not be an official version.")
+    print("Download from: https://github.com/shilezi/office-optimizer-pro")
+    sys.exit(1)
+
 import zipfile
 import os
 import io
