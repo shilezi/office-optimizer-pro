@@ -137,7 +137,7 @@ Branding protection - Shilezi name embedded throughout
 Usage tracking (anonymous) for version validation
 
 For Commercial Licensing:
-Contact: shilezi@hotmail.com
+Contact: 
 
 Business/Enterprise licenses available
 
@@ -183,7 +183,8 @@ This software and associated documentation files are the proprietary property of
 No part of this software may be reproduced, distributed, or transmitted in any form or
 by any means without the prior written permission of the author.
 
-For licensing inquiries: shilezi@hotmail.com
+For licensing inquiries: 
+
 
 
 
